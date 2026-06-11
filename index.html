@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verdant - Explore the Tropical Jungle & Exotic Plants</title>
+    <meta name="description" content="Immerse yourself in the world of tropical flora. Learn about jungle ecosystems, explore our plant database, find your perfect plant match, and schedule care.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Jungle Floating Leaf Particles -->
+    <div class="jungle-overlay"></div>
+    <div class="leaf-particle">🍃</div>
+    <div class="leaf-particle">🍁</div>
+    <div class="leaf-particle">🌿</div>
+    <div class="leaf-particle">☘️</div>
+    <div class="leaf-particle">🍀</div>
+    <div class="leaf-particle">🍂</div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo">
+                <span>🌴</span> Verdant
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" id="nav-home">Home</a></li>
+                    <li><a href="#learn" id="nav-learn">Jungle Layers</a></li>
+                    <li><a href="#catalog" id="nav-catalog">Flora Guide</a></li>
+                    <li><a href="#quiz" id="nav-quiz">Jungle Finder</a></li>
+                    <li><a href="#scheduler" id="nav-scheduler">Care Tracker</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <span class="jungle-badge">🌿 Welcome to the Tropical Canopy</span>
+                <h1>Bring the Spirit of the <span class="gradient-text">Jungle</span> Home</h1>
+                <p>Tropical jungles cover only 6% of the Earth's surface but house over half of all plant and animal species. They are the planet's life support system—generating oxygen, balancing climate, and producing incredible, vibrant flora. Learn the secret life of these exotic plants and bring their soothing energy into your living space.</p>
+                <div class="hero-buttons">
+                    <a href="#catalog" class="btn btn-primary">Explore Flora</a>
+                    <a href="#quiz" class="btn btn-secondary">Find Your Match</a>
+                </div>
+            </div>
+            
+            <div class="hero-interactive-card">
+                <h3>🌴 Quick Jungle Fact</h3>
+                <p style="margin-bottom: 1.5rem; font-style: italic;" id="fact-box">"Did you know that Monstera leaves develop splits and holes—called fenestrations—to allow heavy tropical winds and monsoon rains to pass through without tearing the leaves?"</p>
+                <ul>
+                    <li><span>💨</span> <strong>Wind Protection:</strong> Fenestrations protect the structure.</li>
+                    <li><span>☀️</span> <strong>Light Access:</strong> Bottom leaves get light through upper holes.</li>
+                    <li><span>🧪</span> <strong>Oxygen Booster:</strong> High surface area maximizes transpiration.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learn Section - Explaining Plants and Ecosystem Layers -->
+    <section class="intro-section" id="learn">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Vertical Jungle Layers</h2>
+                <p>Tropical rainforests are organized into four distinct layers. Each layer has unique conditions of light, humidity, and temperature, creating specialized micro-habitats that shape how plants adapt and survive.</p>
+            </div>
+            <div class="intro-grid">
+                <!-- Layer 1 -->
+                <div class="intro-card">
+                    <div class="intro-card-icon">🦅</div>
+                    <h3>1. The Emergent Layer</h3>
+                    <p><strong>The Giants:</strong> Emerging above the canopy at heights of 200 feet, these trees face intense sunlight, dry winds, and extreme temperatures. They have small, waxy leaves to prevent moisture loss and massive buttress roots to stay anchored in shallow jungle soils.</p>
+                </div>
+                <!-- Layer 2 -->
+                <div class="intro-card">
+                    <div class="intro-card-icon">🐒</div>
+                    <h3>2. The Canopy Layer</h3>
+                    <p><strong>The Ocean of Green:</strong> This acts as the forest ceiling, filtering out 90% of sunlight. Epiphytes—like Orchids and Bromeliads—thrive here by growing directly on tree branches to capture filtered sunlight, deriving water and nutrients directly from the humid air.</p>
+                </div>
+                <!-- Layer 3 -->
+                <div class="intro-card">
+                    <div class="intro-card-icon">🦎</div>
+                    <h3>3. The Understory Layer</h3>
+                    <p><strong>The Shade Lovers:</strong> Receiving very little light, plants here (like Monstera and Snake Plants) have evolved large, dark green leaves with high chlorophyll concentration to absorb every photon. High humidity and warmth define this quiet, sheltered layer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plant Catalog Section -->
+    <section class="catalog-section" id="catalog">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Tropical Flora Directory</h2>
+                <p>Browse through our handpicked selection of beautiful plants. Filter by category, learn their biological details, and click on any card to see extensive care and propagation guides.</p>
+            </div>
+            
+            <div class="catalog-controls">
+                <div class="search-box">
+                    <span>🔍</span>
+                    <input type="text" id="search-input" placeholder="Search plants by name or origin...">
+                </div>
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-filter="all">All Species</button>
+                    <button class="tab-btn" data-filter="Indoor">Indoor Foliage</button>
+                    <button class="tab-btn" data-filter="Succulent">Succulents</button>
+                    <button class="tab-btn" data-filter="Orchid">Orchids</button>
+                </div>
+            </div>
+            
+            <div class="plant-grid" id="plant-grid-container">
+                <!-- Plant cards will be dynamically rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Jungle Finder Quiz Section -->
+    <section class="quiz-section" id="quiz">
+        <div class="container">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h3>Jungle Matchmaker Quiz</h3>
+                    <p>Answer three quick questions about your home environment, and we'll match you with the ideal tropical plant companion!</p>
+                </div>
+                
+                <form id="plant-quiz-form">
+                    <!-- Step 1: Light -->
+                    <div class="quiz-step active" data-step="1">
+                        <p class="quiz-question">1. How much natural light does your space receive?</p>
+                        <div class="quiz-options">
+                            <div class="option-card" data-val="low">
+                                <span class="option-icon">🌥️</span>
+                                <span class="option-text">Low / Indirect (Shady Corner)</span>
+                            </div>
+                            <div class="option-card" data-val="high">
+                                <span class="option-icon">☀️</span>
+                                <span class="option-text">Bright / Direct (Sunny Window)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Watering Frequency -->
+                    <div class="quiz-step" data-step="2">
+                        <p class="quiz-question">2. How often do you want to water your plant?</p>
+                        <div class="quiz-options">
+                            <div class="option-card" data-val="neglect">
+                                <span class="option-icon">🌵</span>
+                                <span class="option-text">Once in 2-3 weeks (Forgetful)</span>
+                            </div>
+                            <div class="option-card" data-val="regular">
+                                <span class="option-icon">💧</span>
+                                <span class="option-text">Once a week (Regular Attention)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Space constraints -->
+                    <div class="quiz-step" data-step="3">
+                        <p class="quiz-question">3. What size of plant best fits your layout?</p>
+                        <div class="quiz-options">
+                            <div class="option-card" data-val="small">
+                                <span class="option-icon">🌱</span>
+                                <span class="option-text">Compact (Desks & Shelves)</span>
+                            </div>
+                            <div class="option-card" data-val="large">
+                                <span class="option-icon">🌳</span>
+                                <span class="option-text">Large (Statement Floor Plant)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quiz Navigation -->
+                    <div class="quiz-nav">
+                        <button type="button" class="btn btn-secondary" id="quiz-prev-btn" style="visibility: hidden;">Previous</button>
+                        <button type="button" class="btn btn-primary" id="quiz-next-btn">Next Question</button>
+                    </div>
+                </form>
+                
+                <!-- Quiz Result -->
+                <div class="quiz-result" id="quiz-result-container">
+                    <span class="result-icon">🎉</span>
+                    <h4 class="result-title">Meet Your Plant Match!</h4>
+                    <p id="result-text" style="margin-bottom: 2rem;"></p>
+                    <div class="result-plant-card" id="result-plant-card-holder">
+                        <!-- Result Plant Card will render here -->
+                    </div>
+                    <button class="btn btn-secondary" id="quiz-restart-btn">Take Quiz Again</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Watering Scheduler Section -->
+    <section class="scheduler-section" id="scheduler">
+        <div class="container">
+            <div class="section-header">
+                <h2>Botanical Care Scheduler</h2>
+                <p>Never forget to hydrate your green companions. Add your plants to the scheduler below, set their watering interval, and track when their next drink is due!</p>
+            </div>
+            
+            <div class="scheduler-grid">
+                <!-- Add Form -->
+                <div class="scheduler-form">
+                    <h3>Add Plant to Tracker</h3>
+                    <form id="add-schedule-form">
+                        <div class="form-group">
+                            <label for="sched-plant-select">Select Plant Species</label>
+                            <select id="sched-plant-select" required>
+                                <!-- Rendered dynamically by JS -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sched-plant-nickname">Custom Nickname</label>
+                            <input type="text" id="sched-plant-nickname" placeholder="e.g. Monty, Greenie" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sched-interval">Watering Interval (Days)</label>
+                            <input type="number" id="sched-interval" min="1" max="30" value="7" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Add to Schedule</button>
+                    </form>
+                </div>
+                
+                <!-- Active List -->
+                <div class="scheduler-list">
+                    <h3>Active Hydration Schedule</h3>
+                    <div class="scheduler-items" id="scheduler-items-container">
+                        <!-- Items rendered by JS -->
+                        <div class="empty-schedule" id="empty-schedule-msg">
+                            <span>💧</span>
+                            <p>No plants scheduled yet. Add your first plant to get started!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plant Details Modal -->
+    <div class="modal" id="plant-details-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal-btn">✕</button>
+            <div class="modal-hero" id="modal-hero-wrapper">
+                <!-- Rendered dynamically -->
+            </div>
+            <div class="modal-body">
+                <div class="modal-header-info">
+                    <h2 id="modal-title">Monstera Deliciosa</h2>
+                    <p class="modal-scientific" id="modal-sci-name">Monstera deliciosa</p>
+                </div>
+                
+                <p class="modal-overview" id="modal-overview-desc"></p>
+                
+                <div class="modal-stats-grid">
+                    <div class="modal-stat-card">
+                        <span>☀️</span>
+                        <h4>Sunlight</h4>
+                        <p id="modal-stat-light">Bright Indirect</p>
+                    </div>
+                    <div class="modal-stat-card">
+                        <span>💧</span>
+                        <h4>Water</h4>
+                        <p id="modal-stat-water">Every 1-2 Weeks</p>
+                    </div>
+                    <div class="modal-stat-card">
+                        <span>🌡️</span>
+                        <h4>Humidity</h4>
+                        <p id="modal-stat-humidity">High (60%+)</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Biological Significance & Adaptations</h3>
+                    <p id="modal-bio-desc"></p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>How to Propagate</h3>
+                    <p id="modal-prop-desc"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <a href="#" class="logo">
+                <span>🌴</span> Verdant
+            </a>
+            <p>Verdant is dedicated to promoting jungle conservation, botanical education, and urban greening.</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">&copy; 2026 Verdant. Built for Plant Lovers everywhere.</p>
+            <div class="footer-links">
+                <a href="#learn">Jungle Layers</a>
+                <a href="#catalog">Flora Guide</a>
+                <a href="#quiz">Matchmaker Quiz</a>
+                <a href="#scheduler">Care Tracker</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
