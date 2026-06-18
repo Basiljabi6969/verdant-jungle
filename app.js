@@ -85,6 +85,7 @@ const schedPlantSelect = document.getElementById("sched-plant-select");
 const addScheduleForm = document.getElementById("add-schedule-form");
 const schedulerItemsContainer = document.getElementById("scheduler-items-container");
 const emptyScheduleMsg = document.getElementById("empty-schedule-msg");
+const shootingStarOrbit = document.querySelector(".shooting-star-orbit");
 
 // Quiz Elements
 const quizForm = document.getElementById("plant-quiz-form");
@@ -104,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadSchedules();
     setupQuiz();
     setupNavigationScrolls();
+    setupShootingStarOrbit();
 });
 
 // Setup Smooth Scroll Navigation
@@ -205,6 +207,32 @@ function setupFactTicker() {
             factBox.style.opacity = 1;
         }, 500);
     }, 8000);
+}
+
+
+// Shooting star orbit every 2 minutes
+function setupShootingStarOrbit() {
+    if (!shootingStarOrbit) return;
+
+    const orbitDuration = 16000;
+    const orbitInterval = 120000;
+
+    const launchOrbit = () => {
+        shootingStarOrbit.classList.remove("is-active");
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                shootingStarOrbit.classList.add("is-active");
+            });
+        });
+
+        window.setTimeout(() => {
+            shootingStarOrbit.classList.remove("is-active");
+        }, orbitDuration);
+    };
+
+    window.setTimeout(launchOrbit, 4000);
+    window.setInterval(launchOrbit, orbitInterval);
 }
 
 // Details Modal Functionality
